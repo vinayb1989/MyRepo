@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: test-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+         serviceName: hello-app
+         servicePort: 9080
+      - path: /first
+        backend:
+          serviceName: hello-app
+          servicePort: 9080
+      - path: /second
+        backend:
+          serviceName: hello-app
+          servicePort: 9080

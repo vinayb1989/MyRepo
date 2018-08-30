@@ -1,0 +1,21 @@
+schemaVersion: '2.0.0' # Make sure to test the latest schema version
+
+commandTests:
+- name: 'path'
+  command: '/usr/local/bin/node'
+  args: ['--version']
+  expectedOutput: ['v6.12.0']
+
+fileExistenceTests:
+- name: 'Modules'
+  isDirectory: true
+  path: '/app/node_modules'
+  shouldExist: true
+
+fileContentTests:
+- name: 'app.js'
+  expectedContents: ['PORT = 80']
+  path: '/app/app.js'
+
+
+
